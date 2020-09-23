@@ -107,7 +107,7 @@ $(function() {
                 if (res.status == 0) {
 
                     //4.5 还应该将服务器端响应回来的token存储到本地存储当中
-                    window.localStorage.setItem('token', res.token)
+                    window.localStorage.setItem("token", res.token)
                         // 4.6 如果登陆成功则要跳转到主页面index.html
                     location.href = './index.html'
                 }

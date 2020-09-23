@@ -29,3 +29,26 @@
 .userInfo a img {
     display: none;
 }
+
+.layui-nav a img {
+    display: none;
+}
+
+
+/* 列表前图标的样式 */
+
+.layui-header .layui-icon,
+.layui-nav .layui-icon,
+.layui-nav .icon-16 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    font-size: 16px;
+}
+
+
+/* 为什么一定要用子代选择器 */
+
+.layui-nav .layui-nav-item .layui-nav-child {
+    padding-left: 20px;
+}
