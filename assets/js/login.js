@@ -65,7 +65,7 @@ $(function() {
             // serialize()表单序列化会将 form标签中的所有具有name属性的值一并获取到并拼接成'key=value&key=value'形式的字符串
             data: $(this).serialize(),
             success: function(res) {
-                // console.log(res);
+                console.log(res);
                 if (res.status == 0) {
                     // 3.4 如果注册成功，应该要切换到登陆页面
                     $('.login').show().next().hide()

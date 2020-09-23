@@ -4,9 +4,9 @@ $(function() {
     $.ajax({
         type: "get",
         url: '/my/userinfo',
-        headers: {
-            Authorization: window.localStorage.getItem("token")
-        },
+        // headers: {
+        //     Authorization: window.localStorage.getItem("token")
+        // }, //统一设置了
         success: function(info) {
             if (info.status == 0) {
                 // 欢迎语名字要换掉
@@ -30,4 +30,24 @@ $(function() {
             }
         }
     })
+
+    // 给退出按钮添加事件。 退出到登入页面
+
+    $(".layui-header .logout").on("click", function() {
+        // console.log("hua");
+        layer.confirm('真的要删除吗?', function(index) {
+            //do something  
+
+            // 删除本地存储
+            window.localStorage.removeItem("token")
+                // 关闭弹出层
+            layer.close(index);
+            // 跳转到登录页面
+            window.location.href = "../../login.html";
+        });
+
+
+    })
+
+
 })
