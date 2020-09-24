@@ -17,15 +17,15 @@ $(function() {
                 Authorization: window.localStorage.getItem("token")
             }
         }
-
+        // 防翻墙
         options.complete = function(info) {
             console.log(info); //有responseJSON，里面含有后台返回数据
-            if (res.responseJSON.status == 1 && res.responseJSON.message == '身份认证失败！') {
+            if (info.responseJSON.status == 1 && info.responseJSON.message == '身份认证失败！') {
                 // 删除本地中的无效token
                 localStorage.removeItem('token')
 
                 // 应该先跳转到登陆页面进行登陆
-                location.href = './login.html'
+                location.href = '../../login.html'
 
             }
         }
