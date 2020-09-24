@@ -5,10 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 引入layui的样式文件 -->
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+    <!-- 引入当前页面自己写的css文件 -->
+    <link rel="stylesheet" href="../assets/css/article_category.css">
+    <!-- 引入jquery文件 -->
+    <script src="../assets/lib/jquery.js"></script>
+    <!-- 引入layui的js文件 -->
+    <script src="../assets/lib/layui/layui.all.js"></script>
+    <!-- 引入工具函数 -->
+    <script src="../assets/js/utils.js"></script>
+    <!-- 引入当前页面自己写的js文件 -->
+    <script src="../assets/js/article_category.js"></script>
 </head>
 
 <body>
-    <p>分类</p>
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <!-- <div class="header"> -->
+            <span>文章类别管理</span>
+            <button type="button" class="layui-btn layui-btn-normal">类别添加</button>
+            <!-- </div> -->
+        </div>
+
+        <div class="layui-card-body">
+
+            <table class="layui-table mytable">
+                <colgroup>
+                    <col width="380">
+                    <col width="380">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>昵称</th>
+                        <th>分类名称</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>111</td>
+                        <td>222</td>
+                        <td>
+                            <button type="button" class="layui-btn layui-btn-sm">编辑</button>
+                            <button type="button" class="layui-btn layui-btn-sm layui-btn-danger">删除</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
 </body>
 
 </html>

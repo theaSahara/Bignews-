@@ -1,0 +1,16 @@
+.layui-card {
+    margin: 16px;
+}
+
+.layui-card-header span {
+    float: left;
+}
+
+.layui-card-header button {
+    float: right;
+}
+
+.mytable tr {
+    height: 25px;
+    line-height: 25px;
+}
