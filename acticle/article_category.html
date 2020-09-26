@@ -9,14 +9,7 @@
     <link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
     <!-- 引入当前页面自己写的css文件 -->
     <link rel="stylesheet" href="../assets/css/article_category.css">
-    <!-- 引入jquery文件 -->
-    <script src="../assets/lib/jquery.js"></script>
-    <!-- 引入layui的js文件 -->
-    <script src="../assets/lib/layui/layui.all.js"></script>
-    <!-- 引入工具函数 -->
-    <script src="../assets/js/utils.js"></script>
-    <!-- 引入当前页面自己写的js文件 -->
-    <script src="../assets/js/article_category.js"></script>
+
 </head>
 
 <body>
@@ -24,7 +17,7 @@
         <div class="layui-card-header">
             <!-- <div class="header"> -->
             <span>文章类别管理</span>
-            <button type="button" class="layui-btn layui-btn-normal">类别添加</button>
+            <button type="button" class="layui-btn layui-btn-normal btn-add">类别添加</button>
             <!-- </div> -->
         </div>
 
@@ -32,9 +25,9 @@
 
             <table class="layui-table mytable">
                 <colgroup>
-                    <col width="380">
-                    <col width="380">
                     <col>
+                    <col>
+                    <col width="200">
                 </colgroup>
                 <thead>
                     <tr>
@@ -44,14 +37,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td>111</td>
                         <td>222</td>
                         <td>
-                            <button type="button" class="layui-btn layui-btn-sm">编辑</button>
+                            <button type="button" class="layui-btn layui-btn-sm btn-edit">编辑</button>
                             <button type="button" class="layui-btn layui-btn-sm layui-btn-danger">删除</button>
                         </td>
-                    </tr>
+                    </tr> -->
 
                 </tbody>
             </table>
@@ -59,8 +52,58 @@
         </div>
     </div>
 
+    <!-- 文章分类列表的模板 -->
+    <script type="text/html" id="categoryList">
+        {{each data v i}}
+        <tr>
+            <td>{{v.name}}</td>
+            <td>{{v.alias}}</td>
+            <td>
+                <button type="button" data-id="{{v.Id}}" class="layui-btn layui-btn-xs btn-edit">编辑</button>
+                <button type="button" data-id="{{v.Id}}" class="layui-btn layui-btn-danger layui-btn-xs btn-del">删除</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <!-- 文章列表的模板 -->
+    <script type="text/html" id="addCteTmp">
+        <form class="layui-form myForm addForm" action="">
+            <!-- 第一行：分类名称 -->
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类名称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" required lay-verify="required|username" placeholder="请输入分类名称" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <!-- 第二行：分类别名 -->
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类别名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="alias" required lay-verify="required|username" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <!-- 第三行：确认添加 重置 -->
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn btn-add" lay-submit lay-filter="formDemo">确认添加</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </script>>
 
 
+
+    <!-- 引入jquery文件 -->
+    <script src="../assets/lib/jquery.js"></script>
+    <!-- 引入layui的js文件 -->
+    <script src="../assets/lib/layui/layui.all.js"></script>
+    <!-- 引入模板引擎文件 -->
+    <script src="../assets/lib/template-web.js"></script>
+    <!-- 引入工具函数 -->
+    <script src="../assets/js/utils.js"></script>
+    <!-- 引入当前页面自己写的js文件 -->
+    <script src="../assets/js/article_category.js"></script>
 </body>
 
 </html>
