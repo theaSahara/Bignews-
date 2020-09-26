@@ -41,7 +41,7 @@ $(function() {
     }
     // 给退出按钮添加事件。 退出到登入页面
     $(".layui-header .logout").on("click", function() {
-        // console.log("hua");
+        console.log("hua");
         layer.confirm('真的要退出吗?', function(index) {
             //do something  
 
@@ -50,8 +50,9 @@ $(function() {
                 // 关闭弹出层
             layer.close(index);
             // 跳转到登录页面
-            window.location.href = "../../login.html";
+            window.location.href = "./login.html"
         });
+
 
 
     })
